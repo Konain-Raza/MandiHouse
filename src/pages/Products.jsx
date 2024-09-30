@@ -8,7 +8,7 @@ const Products = () => {
   const [currentProduct, setCurrentProduct] = useState([]);
 
   return (
-    <div className="relative flex flex-row flex-wrap mx-auto justify-around">
+    <div className="relative flex flex-row flex-wrap mx-auto g">
       <Video/>
       {ProductData.map((products,index) => {
         return (

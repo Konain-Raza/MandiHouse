@@ -59,7 +59,7 @@ const Navbar = () => {
               <li key={index}>
                 <Link
                   to={link.toLowerCase()}
-                  className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:p-0"
+                  className="block py-2 px-3 text-white  rounded md:bg-transparent md:p-0"
                   aria-current={link === "Home" ? "page" : undefined} // Use aria-current conditionally
                 >
                   {link}
