@@ -6,7 +6,7 @@ const ProductCard = ({ data, setIsModal, setCurrentProduct }) => {
 
   return (
     <div
-      className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+      className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg  bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-gray-100 shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg"
       onClick={() => {
         setIsModal(true);
         setCurrentProduct(data.variations);
@@ -20,11 +20,11 @@ const ProductCard = ({ data, setIsModal, setCurrentProduct }) => {
       </a>
       <div className="mt-4 px-5 pb-5">
         <a href="#">
-          <h5 className="text-xl tracking-tight text-slate-900">{name}</h5>
+          <h5 className="text-xl tracking-tight text-white">{name}</h5>
         </a>
         <div className="mt-2 mb-5 flex items-center justify-between">
           <p>
-            <span className="text-3xl font-bold text-slate-900">
+            <span className="text-3xl font-bold text-white">
               {price} Rs
             </span>
           </p>

@@ -4,15 +4,16 @@ const Modal = ({ onClose, currentProduct }) => {
   // console.log(currentProduct);
   const [product, setProduct] = useState(currentProduct[0]);
   return (
-    <div className="relative w-full h-screen">
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-20">
-        <div className="w-full max-w-4xl h-auto bg-gray-200 rounded-2xl shadow-lg flex flex-col md:flex-row">
-          <div className="w-full md:w-1/2 rounded-2xl  overflow-hidden">
-            <img src={product.imageUrl} alt={product.name} />
+    <div className="relative w-full h-screen ">
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-20 px-4">
+        <div className="w-full max-w-4xl h-auto bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10  border-gray-100 rounded-2xl shadow-lg flex flex-col md:flex-row">
+        <div className="w-full md:w-1/2 h-80 md:h-full rounded-2xl overflow-hidden">
+
+            <img src={product.imageUrl} alt={product.name} className="w-full h-[72vh] object-cover"/>
           </div>
           <div className="w-full md:w-1/2 p-6">
             <div className="flex justify-between items-start">
-              <h2 className="text-2xl font-bold">{product.name}</h2>
+              <h2 className="text-2xl font-bold text-white">{product.name}</h2>
               <button
                 onClick={() => onClose(false)}
                 className="close rounded-full bg-[#03302D] w-fit text-white text-xl p-2 hover:scale-110"
@@ -32,9 +33,9 @@ const Modal = ({ onClose, currentProduct }) => {
               </button>
             </div>
             <div className="flex items-baseline space-x-2 my-2">
-              <p className="text-xl font-semibold">Rs. {product.price}</p>
+              <p className="text-xl font-semibold text-white">Rs. {product.price}</p>
             </div>
-            <p className="text-gray-600 mb-4">{product.description}</p>
+            <p className="text-gray-300 mb-4">{product.description}</p>
             <div className="images grid grid-cols-3 gap-2 mt-4">
               {currentProduct.map((item, index) => (
                 <div
@@ -44,7 +45,7 @@ const Modal = ({ onClose, currentProduct }) => {
                   <img
                     onClick={() => setProduct(currentProduct[index])}
                     src={item.imageUrl}
-                    className="object-cover w-full h-full transition-transform duration-300 transform hover:scale-105 hover:shadow-lg"
+                    className="object-cover w-full h-40 transition-transform duration-300 transform hover:scale-105 hover:shadow-lg"
                     alt={item.name}
                   />
                 </div>
