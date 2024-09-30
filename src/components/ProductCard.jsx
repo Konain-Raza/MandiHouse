@@ -1,15 +1,15 @@
 import React from "react";
 
 const ProductCard = ({ data, setIsModal, setCurrentProduct }) => {
-  const { name, description, price, category, imageUrl, rating } = data[0];
+  const { name, description, price, category, imageUrl, rating } =
+    data.variations[0];
 
   return (
     <div
       className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg"
       onClick={() => {
         setIsModal(true);
-        setCurrentProduct(data);
-        
+        setCurrentProduct(data.variations);
       }}
     >
       <a
@@ -17,7 +17,6 @@ const ProductCard = ({ data, setIsModal, setCurrentProduct }) => {
         href="#"
       >
         <img className="object-cover w-full" src={imageUrl} alt="product" />
-     
       </a>
       <div className="mt-4 px-5 pb-5">
         <a href="#">
@@ -30,7 +29,7 @@ const ProductCard = ({ data, setIsModal, setCurrentProduct }) => {
             </span>
           </p>
           <div className="flex items-center">
-            {[...Array(5)].map((_, index) => (
+            {[...Array(Math.floor(rating))].map((_, index) => (
               <svg
                 key={index}
                 aria-hidden="true"

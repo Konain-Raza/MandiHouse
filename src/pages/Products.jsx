@@ -11,7 +11,7 @@ const Products = () => {
       {ProductData.map((products,index) => {
         return (
           <ProductCard
-          key={index}
+          key={products.id}
             data={products}
             setIsModal={setIsModal}
             setCurrentProduct={setCurrentProduct}
